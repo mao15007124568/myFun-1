@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<meta charset="UTF-8">
+<title>Planet Picker 🌍👌 | Text/Number Transitions & Circular SVG Nav Tutorial | @keyframers 2.10.0</title>
+
+
+<link rel='stylesheet' href='css/splitting.css'>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+  
+
+<div id="app" data-current-planet="mercury">
+
+  <nav class="planet-nav">
+    <svg viewBox="0 20 400 400" xmlns="http://www.w3.org/2000/svg">
+        <path 
+            id="navPath" 
+            d="M10,200 C30,-28 370,-28 390,200"
+            fill="none" />
+      <text>
+        <textPath href="#navPath" startOffset="0" font-size="8">
+          <tspan>水星</tspan>
+          <tspan>金星</tspan>
+          <tspan>地球</tspan>
+          <tspan>火星</tspan>
+          <tspan>木星</tspan>
+          <tspan>土星</tspan>
+          <tspan>天王星</tspan>
+          <tspan>海王星</tspan>
+        </textPath>
+      </text>
+
+    </svg>
+  </nav>
+
+  <div class="planet" data-planet="mercury" data-active>
+    <div class="planet-title">
+      <h1>水星</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        3.13
+      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        0.9
+      </div>
+      <div class="detail" data-detail="hours">
+        10
+      </div>
+    </div>
+
+    <figure class="planet-figure">
+      <img src="img/1_mercury.jpg" />
+    </figure>
+  </div>
+
+  <div class="planet" data-planet="venus">
+    <div class="planet-title">
+      <h1>金星</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        4.13
+      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        0.2
+      </div>
+      <div class="detail" data-detail="hours">
+        20
+      </div>
+    </div>
+
+    <figure class="planet-figure">
+      <img src="img/2_venus.jpg" />
+    </figure>
+  </div>
+
+  <div class="planet" data-planet="earth">
+    <div class="planet-title">
+      <h1>地球</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        5.13
+      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        7.3
+      </div>
+      <div class="detail" data-detail="hours">
+        30
+      </div>
+    </div>
+
+    <figure class="planet-figure">
+      <img src="img/3_earth.jpg" />
+    </figure>
+  </div>
+
+  <div class="planet" data-planet="mars">
+    <div class="planet-title">
+      <h1>火星</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        6.13
+      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        1.1
+      </div>
+      <div class="detail" data-detail="hours">
+        40
+      </div>
+    </div>
+
+    <figure class="planet-figure">
+      <img src="img/4_mars.jpg" />
+    </figure>
+  </div>
+
+  <div class="planet" data-planet="jupiter">
+    <div class="planet-title">
+      <h1>木星</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        11.13
+      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        1.8
+      </div>
+      <div class="detail" data-detail="hours">
+        50
+      </div>
+    </div>
+
+    <figure class="planet-figure">
+      <img src="img/5_jupiter.jpg" />
+    </figure>
+  </div>
+
+  <div class="planet" data-planet="saturn">
+    <div class="planet-title">
+      <h1>土星</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        9.13
+      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        7.3
+      </div>
+      <div class="detail" data-detail="hours">
+        60
+      </div>
+    </div>
+
+    <figure class="planet-figure">
+      <img src="img/6_saturn.jpg" />
+    </figure>
+  </div>
+
+  <div class="planet" data-planet="uranus">
+    <div class="planet-title">
+      <h1>天王星</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        11.13
+      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        1.8
+      </div>
+      <div class="detail" data-detail="hours">
+        50
+      </div>    </div>
+
+    <figure class="planet-figure">
+      <img src="img/7_uranus.jpg" />
+    </figure>
+  </div>
+
+
+  <div class="planet" data-planet="neptune">
+    <div class="planet-title">
+      <h1>海王星</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+
+    <div class="planet-details">
+      <div class="detail" data-detail="tilt" data-postfix="°">
+        31.03      </div>
+      <div class="detail" data-detail="gravity" data-postfix="𝗑">
+        8.9      </div>
+      <div class="detail" data-detail="hours">
+        10
+      </div>
+    </div>
+
+    <figure class="planet-figure">
+      <img src="img/8_neptune.jpg" />
+    </figure>
+  </div>
+</div>
+
+<script src='js/splitting.min.js'></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
