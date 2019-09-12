@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<title>登录成功页面</title>
+</head>
+<body>
+<h2>登录成功</h2>
+<h3 th:text="欢迎您+${user.name}">欢迎您</h3>
+<img th:src="${user.avatarUrl}" style="width: 100px">
+</body>
+</html>
