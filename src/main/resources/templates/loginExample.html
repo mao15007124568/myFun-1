@@ -11,7 +11,7 @@
 </html> -->
 
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,7 +74,7 @@
           });
           //点击登录
           function goLogin() {
-              alert('点击查看未读消息')
+            window.location.href ="https://github.com/login/oauth/authorize?client_id=f0299c35ff4a8f8ba726&redirect_uri=http://localhost:8887/callback&scope=user&state=1";  
           }
           //点击查看未读消息
           function goNotice() {
@@ -230,7 +230,7 @@
                                         <div id="login" class="col-md-4 text-center grid">
                                             <i class="fa fa-user" style="font-size: 25px;line-height: 45px;"></i>
                                             <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
-                                                点击登录</p>
+                                            点击登录</p>
                                         </div>
                                         <div id="notice" class="col-md-4 text-center grid">
                                             <i class="fa fa-comments" style="font-size: 25px;line-height: 45px;"></i>
@@ -292,7 +292,7 @@
                                 <li><a href="#hero-area">首页</a></li>
                                 <li><a href="#about-us">关于我们</a></li>
                                 <li><a href="#blog">牛奶箱</a></li>
-                                <li><a href="#subscribe">充值</a></li>
+                                <li><a href="successfulPage.html">充值</a></li>
                                 <li><a href="#footer">联系我们</a></li>
                               </ul>
                             </div><!-- /.navbar-collapse -->
