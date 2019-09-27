@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexPage {
     @RequestMapping
     public String getIndexPage(){
-        return "index";
+        return "loginExample";
     }
 }
