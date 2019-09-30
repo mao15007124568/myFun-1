@@ -12,79 +12,82 @@
 
 <!DOCTYPE html>
 <html class="no-js" xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>解忧杂货店</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- CSS
-        ================================================ -->
-        <!-- Owl Carousel -->
-		<link rel="stylesheet" href="css/owl.carousel.css">
-        <!-- bootstrap.min css -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- Font-awesome.min css -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-        <!-- Main Stylesheet -->
-        <link rel="stylesheet" href="css/animate.min.css">
-		<link rel="stylesheet" href="css/main.css">
-        <!-- Responsive Stylesheet -->
-        <link rel="stylesheet" href="css/responsive.css">
-        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
-		<!-- Js -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/jquery.nav.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/main.js"></script>
-        <script>
-            $(function () {
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>解忧杂货店</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS
+    ================================================ -->
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font-awesome.min css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Responsive Stylesheet -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- Js -->
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(function () {
             $(".dropdown").mouseover(function () {
                 $(this).addClass("open");
             });
-    
+
             $(".dropdown").mouseleave(function () {
                 $(this).removeClass("open");
             })
         })
-        </script>
-        <script type="text/javascript" src="js/jquery-3.3.1.min"></script>
-        <script type="text/javascript">
-          $(function () {
-              //给返回首页修改密码按钮添加单击事件
-              $("#login").on("click", function () {
-                  goLogin();
-              });
-    
-              //给退出按钮添加单击事件
-              $("#notice").on("click", function () {
-                  goNotice();
-              });
+    </script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min"></script>
+    <script type="text/javascript">
+        $(function () {
+            //给返回首页修改密码按钮添加单击事件
+            $("#login").on("click", function () {
+                goLogin();
+            });
 
-              $("#money").on("click", function () {
-                  goMoney();
-              });
-    
-          });
-          //点击登录
-          function goLogin() {
-            window.location.href ="https://github.com/login/oauth/authorize?client_id=f0299c35ff4a8f8ba726&redirect_uri=http://localhost:8887/callback&scope=user&state=1";  
-          }
-          //点击查看未读消息
-          function goNotice() {
-              alert('点击查看未读消息');
-          }
-          //点击查看解忧币
-          function goMoney() {
-              alert('点击查看解忧币');
-          }
-        </script>
+            //给退出按钮添加单击事件
+            $("#notice").on("click", function () {
+                goNotice();
+            });
+
+            $("#money").on("click", function () {
+                goMoney();
+            });
+
+        });
+
+        //点击登录
+        function goLogin() {
+            window.location.href = "https://github.com/login/oauth/authorize?client_id=f0299c35ff4a8f8ba726&redirect_uri=http://localhost:8887/callback&scope=user&state=1";
+        }
+
+        //点击查看未读消息
+        function goNotice() {
+            alert('点击查看未读消息');
+        }
+
+        //点击查看解忧币
+        function goMoney() {
+            alert('点击查看解忧币');
+        }
+    </script>
     <style>
         /* 淘宝CSS格式化代码
         body,
@@ -92,73 +95,73 @@
             margin: 0;
             padding: 0;
         } */
- 
+
         body, button, input, select, textarea {
             font: 12px/1.5 tahoma, arial, \5b8b\4f53;
         }
- 
+
         /* h1, h2, h3, h4, h5, h6 {
             font-size: 100%;
         } */
- 
+
         address, cite, dfn, em, var {
             font-style: normal;
         }
- 
+
         code, kbd, pre, samp {
             font-family: couriernew, courier, monospace;
         }
- 
+
         small {
             font-size: 12px;
         }
- 
+
         ul, ol {
             list-style: none;
         }
- 
+
         a {
             text-decoration: none;
         }
- 
+
         a:hover {
             text-decoration: underline;
         }
- 
+
         sup {
             vertical-align: text-top;
         }
- 
+
         sub {
             vertical-align: text-bottom;
         }
- 
+
         legend {
             color: #000;
         }
- 
+
         fieldset, img {
             border: 0;
         }
- 
+
         button, input, select, textarea {
             font-size: 100%;
         }
- 
+
         table {
             border-collapse: collapse;
             border-spacing: 0;
         }
- 
+
         body, html {
             background: #EAEEF2;
             width: 100%;
             height: 100%;
         }
- 
-       
+
+
         .logo {
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, 0.3);
             color: black;
             font-size: 40px;
             padding-left: 20px;
@@ -170,35 +173,35 @@
             z-index: 100;
             width: 100%;
         }
- 
+
         .nav > li > a:hover {
             color: #262626;
             text-decoration: none;
-            background-color:rgba(0,0,0,0.3);
+            background-color: rgba(0, 0, 0, 0.3);
         }
- 
+
         .open > a {
-            background-color:rgba(0,0,0,0.3) !important;
+            background-color: rgba(0, 0, 0, 0.3) !important;
         }
- 
+
         .right {
             float: right;
         }
- 
+
         .grid:hover {
             background: #efefef;
         }
- 
+
     </style>
-	</head>
-	<body>
-	<!--
-	header-img start 
-	============================== -->
-    <section id="hero-area">
-      <img class="img-responsive" src="images/shop.jpg" alt="">
-      <!-- 以下为头像登录部分 -->
-      <div class="logo">
+</head>
+<body>
+<!--
+header-img start
+============================== -->
+<section id="hero-area">
+    <img class="img-responsive" src="images/shop.jpg" alt="">
+    <!-- 以下为头像登录部分 -->
+    <div class="logo">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-10"></div>
@@ -209,7 +212,8 @@
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown"
                                    style="height: 60px">
-                                    <img alt="" class="img-circle" src="images/headwhite.png" width="20px" height="20px"/>
+                                    <img alt="" class="img-circle" src="images/headwhite.png" width="20px"
+                                         height="20px"/>
                                     <span style="color: #FFFFFF;font-size: 15px">
                                     <i>Login</i>
                                 </span>
@@ -218,19 +222,23 @@
                                      style="background: #FFFFFF;width: 320px;overflow: hidden">
                                     <div style="margin-top: 16px;border-bottom: 1px solid #eeeeee">
                                         <div style="text-align: center">
-                                            <img class="img-circle" src="images/head.png"
+                                            <img class="img-circle" th:src="@{${user==null} ? 'images/head.png':${user.avatarUrl}}"
+                                                 src="images/head.png"
                                                  style="width: 20px;height: 20px;"/>
                                         </div>
-                                        <div style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
-                                            <span>username</span>
+                                        <div th:if="${user}==null" style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
+                                            <span >请登录</span>
+                                        </div>
+                                        <div th:if="${user}!=null" style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
+                                            <span th:text="${user.name}"></span>
                                         </div>
                                     </div>
-     
+
                                     <div class="row" style="margin-left: 15px;margin-right: 15px;margin-top: 10px">
                                         <div id="login" class="col-md-4 text-center grid">
                                             <i class="fa fa-user" style="font-size: 25px;line-height: 45px;"></i>
                                             <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
-                                            点击登录</p>
+                                                点击登录</p>
                                         </div>
                                         <div id="notice" class="col-md-4 text-center grid">
                                             <i class="fa fa-comments" style="font-size: 25px;line-height: 45px;"></i>
@@ -253,310 +261,318 @@
                             </li>
                         </ul>
                     </div>
-     
+
                 </div>
             </div>
         </div>
-     
-     
+
+
     </div>
-      <!-- 头像下拉列表结束 -->
-    </section>
-	<!--
-    Header start 
-	============================== -->
-	<nav id="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <nav class="navbar navbar-default">
-                          <div class="container-fluid">
+    <!-- 头像下拉列表结束 -->
+</section>
+<!--
+Header start
+============================== -->
+<nav id="navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
-                              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                              </button>
-                                  <a class="navbar-brand" href="#">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">
                                     <!--这里放logo <img src="images/logo.png" alt="Logo"> -->
-                                  </a>
+                                </a>
 
                             </div>
 
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                              <ul class="nav navbar-nav navbar-right" id="top-nav">
-                                <li><a href="#hero-area">首页</a></li>
-                                <li><a href="#about-us">关于我们</a></li>
-                                <li><a href="#blog">牛奶箱</a></li>
-                                <li><a href="successfulPage.html">充值</a></li>
-                                <li><a href="#footer">联系我们</a></li>
-                              </ul>
+                                <ul class="nav navbar-nav navbar-right" id="top-nav">
+                                    <li><a href="#hero-area">首页</a></li>
+                                    <li><a href="#about-us">关于我们</a></li>
+                                    <li><a href="#blog">牛奶箱</a></li>
+                                    <li><a href="#">充值</a></li>
+                                    <li><a href="#footer">联系我们</a></li>
+                                </ul>
                             </div><!-- /.navbar-collapse -->
-                          </div><!-- /.container-fluid -->
-                        </nav>
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .container close -->
+</nav><!-- header close -->
+<!--
+Slider start
+============================== -->
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="title">
+                        <h3>以往的 <span>信件</span></h3>
                     </div>
-                </div><!-- .col-md-12 close -->
-            </div><!-- .row close -->
-        </div><!-- .container close -->
-	</nav><!-- header close -->
-    <!--
-    Slider start
-    ============================== -->
-    <section id="slider">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <div class="title">
-                            <h3>以往的 <span>信件</span></h3>
+                    <div id="owl-example" class="owl-carousel">
+                        <div>
+                            <img class="img-responsive" src="images/slider/1.jpg" alt="">
                         </div>
-                        <div id="owl-example" class="owl-carousel">
-                            <div>
-                                <img class="img-responsive" src="images/slider/1.jpg" alt="">
-                            </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/2.jpg" alt="">
-                            </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/3.jpg" alt="">
-                            </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/4.jpg" alt="">
-                            </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/5.jpg" alt="">
-                            </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/6.jpg" alt="">
-                            </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/7.jpg" alt="">
-                            </div>
-                            <div>
-                                <img class="img-responsive" src="images/slider/8.jpg" alt="">
-                            </div>
+                        <div>
+                            <img class="img-responsive" src="images/slider/2.jpg" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="images/slider/3.jpg" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="images/slider/4.jpg" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="images/slider/5.jpg" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="images/slider/6.jpg" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="images/slider/7.jpg" alt="">
+                        </div>
+                        <div>
+                            <img class="img-responsive" src="images/slider/8.jpg" alt="">
                         </div>
                     </div>
-                </div><!-- .col-md-12 close -->
-            </div><!-- .row close -->
-        </div><!-- .container close -->
-    </section><!-- slider close -->
-    <!--
-    about-us start
-    ============================== -->
-    <section id="about-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="images/langshi.png" alt="cooker-img">
-                        <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms" >你的 <span>烦恼</span> </br> 解忧爷爷 <span>来帮你解决</span>
-                        </h1>
-                        <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">浪矢爷爷曾经和他的儿子说，“很多时候，咨询的人心里已经有了答案，来咨询只是想确认自己的决定是对的。”这就像抛硬币一样，把硬币抛到空中的时候，也是有了选择的时候。他们只是迷途的羔羊，手中都有地图，却没有去看，或是不知道自己的位置，所以回信的人只要点出他们的羁绊所在，他们就知道该如何走下去。</p>
-                    </div>
-                </div><!-- .col-md-12 close -->
-            </div><!-- .row close -->
-        </div><!-- .containe close -->
-    </section><!-- #call-to-action close -->
-    <!--
-    blog start
-    ============================ -->
-    <section id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <h1 class="heading">最近的 <span>信件</span> from <span>牛奶箱</span></h1>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .container close -->
+</section><!-- slider close -->
+<!--
+about-us start
+============================== -->
+<section id="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" src="images/langshi.png"
+                         alt="cooker-img">
+                    <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">你的
+                        <span>烦恼</span> </br> 解忧爷爷 <span>来帮你解决</span>
+                    </h1>
+                    <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">
+                        浪矢爷爷曾经和他的儿子说，“很多时候，咨询的人心里已经有了答案，来咨询只是想确认自己的决定是对的。”这就像抛硬币一样，把硬币抛到空中的时候，也是有了选择的时候。他们只是迷途的羔羊，手中都有地图，却没有去看，或是不知道自己的位置，所以回信的人只要点出他们的羁绊所在，他们就知道该如何走下去。</p>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .containe close -->
+</section><!-- #call-to-action close -->
+<!--
+blog start
+============================ -->
+<section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1 class="heading">最近的 <span>信件</span> from <span>牛奶箱</span></h1>
+                    <ul>
+                        <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+                            <div class="blog-img">
+                                <img src="images/blog/1.jpg" alt="blog-img">
+                            </div>
+                            <div class="content-right">
+                                <h3>生活类</h3>
+                                <p>夹在“追求梦想”和“接受现实”两个选择之间不知如何抉择的克郎，往家附近的“浪矢杂货店”投去咨询烦恼的信件...</p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="400ms">
+                            <div class="blog-img">
+                                <img src="images/blog/2.jpg" alt="blog-img">
+                            </div>
+                            <div class="content-right">
+                                <h3>情感类</h3>
+                                <p>寄信人自称为“迷途的小狗”的十九岁的女孩，在信中她说道想辞去OL的工作转行当酒家女，不知如何是好...</p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="500ms">
+                            <div class="content-left">
+                                <h3>心事类</h3>
+                                <p>如果把来找我咨询的人比喻成迷途的羔羊，通常他们手上都有地图，却没有去看，或是不知道自己目前的位置...</p>
+                            </div>
+                            <div class="blog-img-2">
+                                <img src="images/blog/3.jpg" alt="blog-img">
+                            </div>
+                        </li>
+                        <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="600ms">
+                            <div class="content-left">
+                                <h3>故事类</h3>
+                                <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
+                            </div>
+                            <div class="blog-img-2">
+                                <img src="images/blog/4.jpg" alt="blog-img">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .containe close -->
+</section><!-- #blog close -->
+
+<!--
+定期定购开始
+============================ -->
+<section id="subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1 class=" heading wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms"> 在这里你可以成为 <span>写信</span>
+                        或者<span>回信</span>的那个解忧人</h1>
+                    <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">
+                        每位用户起始都拥有30个解忧币，当解忧币用完时，你可以选择回信以赚取解忧币，或者在您的个人账号中充值解忧币 </p>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="exampleInputAmount"
+                                       placeholder="输入您的邮箱以充值...">
+                                <div class="input-group-addon">
+                                    <a th:href="@{/shift}" class="btn btn-default" type="submit"> 点击充值</a>
+                                    <!--<button class="btn btn-default" type="submit">充值</button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .containe close -->
+</section><!-- #subscribe close -->
+<!--
+CONTACT US  start
+============================= -->
+<section id="contact-us">
+
+</section><!-- #contact-us close -->
+<!--
+footer  start
+============================= -->
+<section id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="block wow fadeInLeft" data-wow-delay="200ms">
+                    <h3>个人 <span>信息</span></h3>
+                    <div class="info">
                         <ul>
-                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
-                                <div class="blog-img">
-                                    <img src="images/blog/1.jpg" alt="blog-img">
-                                </div>
-                                <div class="content-right">
-                                    <h3>生活类</h3>
-                                    <p>夹在“追求梦想”和“接受现实”两个选择之间不知如何抉择的克郎，往家附近的“浪矢杂货店”投去咨询烦恼的信件...</p>
-                                </div>
+                            <li>
+                                <h4><i class="fa fa-phone"></i>电话</h4>
+                                <p>(000) 123 456 78- (000) 123 4567 89</p>
+
                             </li>
-                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="400ms">
-                                <div class="blog-img">
-                                    <img src="images/blog/2.jpg" alt="blog-img">
-                                </div>
-                                <div class="content-right">
-                                    <h3>情感类</h3>
-                                    <p>寄信人自称为“迷途的小狗”的十九岁的女孩，在信中她说道想辞去OL的工作转行当酒家女，不知如何是好...</p>
-                                </div>
+                            <li>
+                                <h4><i class="fa fa-map-marker"></i>地址</h4>
+                                <p>湖北省武汉市武昌区徐家堋街道368号湖北大学</p>
                             </li>
-                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="500ms">
-                                <div class="content-left">
-                                    <h3>心事类</h3>
-                                    <p>如果把来找我咨询的人比喻成迷途的羔羊，通常他们手上都有地图，却没有去看，或是不知道自己目前的位置...</p>
-                                </div>
-                                <div class="blog-img-2">
-                                    <img src="images/blog/3.jpg" alt="blog-img">
-                                </div>
-                            </li>
-                            <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="600ms">
-                                <div class="content-left">
-                                    <h3>故事类</h3>
-                                    <p>Prepared in true New England fash-ion. Tender all-white meat chicken simmered...</p>
-                                </div>
-                                <div class="blog-img-2">
-                                    <img src="images/blog/4.jpg" alt="blog-img">
-                                </div>
+                            <li>
+                                <h4><i class="fa fa-envelope"></i>电子邮箱</h4>
+                                <p>34125154@qq.com</p>
+
                             </li>
                         </ul>
                     </div>
-                </div><!-- .col-md-12 close -->
-            </div><!-- .row close -->
-        </div><!-- .containe close -->
-    </section><!-- #blog close -->
-    
-    <!--
-    定期定购开始
-    ============================ -->
-    <section id="subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="block">
-                        <h1 class=" heading wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms"> 在这里你可以成为 <span>写信</span> 或者<span>回信</span>的那个解忧人</h1>
-                        <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">每位用户起始都拥有30个解忧币，当解忧币用完时，你可以选择回信以赚取解忧币，或者在您的个人账号中充值解忧币 </p>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="输入您的邮箱以充值...">
-                                    <div class="input-group-addon">
-                                        <button class="btn btn-default" type="submit">充值</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div><!-- .col-md-12 close -->
-            </div><!-- .row close -->
-        </div><!-- .containe close -->
-    </section><!-- #subscribe close -->
-    <!--
-    CONTACT US  start
-    ============================= -->
-    <section id="contact-us">
-       
-    </section><!-- #contact-us close -->
-    <!--
-    footer  start
-    ============================= -->
-    <section id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="block wow fadeInLeft"  data-wow-delay="200ms">
-                        <h3>个人 <span>信息</span></h3>
-                        <div class="info">
-                            <ul>
-                                <li>
-                                  <h4><i class="fa fa-phone"></i>电话</h4>
-                                  <p>(000) 123 456 78- (000) 123 4567 89</p>
-                                    
-                                </li>
-                                <li>
-                                  <h4><i class="fa fa-map-marker"></i>地址</h4>
-                                  <p>湖北省武汉市武昌区徐家堋街道368号湖北大学</p>
-                                </li>
-                                <li>
-                                  <h4><i class="fa fa-envelope"></i>电子邮箱</h4>
-                                  <p>34125154@qq.com</p>
-                                  
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
-                <!-- .col-md-4 close -->
-                <div class="col-md-4">
-                    <div class="block wow fadeInLeft"  data-wow-delay="700ms">
-                        <h3>最新 <span>信件</span>整理</h3>
-                        <div class="blog">
-                            <ul>
-                                <li>
-                                    <h4><a href="#">2019-09-25</a></h4>
-                                    <p>我昨天又跟我的室友吵架了...</p>
-                                </li>
-                                <li>
-                                    <h4><a href="#">2019-10-30</a></h4>
-                                    <p>我最近生活很迷茫，不知道接下来在大学中应该怎么渡过...</p>
-                                </li>
-                            </ul>                
-                        </div>
-                    </div>
-                </div>
-                <!-- .col-md-4 close -->
-                <div class="col-md-4">
-                    <div class="block wow fadeInLeft"  data-wow-delay="1100ms">
-                        <div class="gallary">
-                            <h3>照片 <span>集锦</span></h3>
-                            <ul>
-                                <li>
-                                    <a href="#"><img src="images/photo/photo-1.jpg" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="images/photo/photo-2.jpg" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="images/photo/photo-3.jpg" alt=""></a>
-                                </li>
-                                <li>
-                                    <a href="#"><img src="images/photo/photo-4.jpg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="social-media-link">
-                            <h3>Follow <span>US</span></h3>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-dribbble"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-behance"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- .col-md-4 close -->
-            </div><!-- .row close -->
-        </div><!-- .containe close -->
-    </section><!-- #footer close -->
-    <!--
-    footer-bottom  start
-    ============================= -->
-    <footer id="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="block">
-                        <p>Copyright &copy; 2019 -湖北大学教育学院</a></p>
+            </div>
+            <!-- .col-md-4 close -->
+            <div class="col-md-4">
+                <div class="block wow fadeInLeft" data-wow-delay="700ms">
+                    <h3>最新 <span>信件</span>整理</h3>
+                    <div class="blog">
+                        <ul>
+                            <li>
+                                <h4><a href="#">2019-09-25</a></h4>
+                                <p>我昨天又跟我的室友吵架了...</p>
+                            </li>
+                            <li>
+                                <h4><a href="#">2019-10-30</a></h4>
+                                <p>我最近生活很迷茫，不知道接下来在大学中应该怎么渡过...</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            <!-- .col-md-4 close -->
+            <div class="col-md-4">
+                <div class="block wow fadeInLeft" data-wow-delay="1100ms">
+                    <div class="gallary">
+                        <h3>照片 <span>集锦</span></h3>
+                        <ul>
+                            <li>
+                                <a href="#"><img src="images/photo/photo-1.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/photo/photo-2.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/photo/photo-3.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/photo/photo-4.jpg" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social-media-link">
+                        <h3>Follow <span>US</span></h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-behance"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- .col-md-4 close -->
+        </div><!-- .row close -->
+    </div><!-- .containe close -->
+</section><!-- #footer close -->
+<!--
+footer-bottom  start
+============================= -->
+<footer id="footer-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="block">
+                    <p>Copyright &copy; 2019 -湖北大学教育学院</a></p>
+                </div>
+            </div>
         </div>
-    </footer>
-	</body>
+    </div>
+</footer>
+</body>
 </html>

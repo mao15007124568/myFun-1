@@ -5,10 +5,13 @@ import edu.hubu.myfun.dto.GithubUser;
 import edu.hubu.myfun.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
@@ -28,7 +31,8 @@ public class LoginController {
     @RequestMapping("callback")
     public String login(@RequestParam(name = "code") String code,
                         @RequestParam(name = "state") String state,
-                        Model model) {
+                        Model model,
+                        HttpSession session) {
 
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setClient_id(clientId);
@@ -38,6 +42,7 @@ public class LoginController {
         accessTokenDTO.setState(state);
         GithubUser githubUser = githubProvider.getGithubUser(githubProvider.getAccess(accessTokenDTO));
         model.addAttribute("user", githubUser);
-        return "successfulPage";
+        session.setAttribute("user",githubUser);
+        return "loginExample";
     }
 }
