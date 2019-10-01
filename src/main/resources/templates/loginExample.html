@@ -212,10 +212,11 @@ header-img start
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown"
                                    style="height: 60px">
-                                    <img alt="" class="img-circle" src="images/headwhite.png" width="20px"
+                                    <img alt="" class="img-circle" th:src="@{${user==null} ? 'images/head.png':${user.avatarUrl}}" src="images/headwhite.png" width="20px"
                                          height="20px"/>
                                     <span style="color: #FFFFFF;font-size: 15px">
-                                    <i>Login</i>
+                                    <i th:if="${user==null}">Login</i>
+                                    <i th:if="${user!=null}" th:text="${user.name}">Login</i>
                                 </span>
                                 </a>
                                 <div class="dropdown-menu pull-right"
