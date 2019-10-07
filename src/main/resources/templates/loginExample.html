@@ -212,10 +212,11 @@ header-img start
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown"
                                    style="height: 60px">
-                                    <img alt="" class="img-circle" src="images/headwhite.png" width="20px"
+                                    <img alt="" class="img-circle" th:src="@{${user==null} ? 'images/head.png':${user.avatarUrl}}" src="images/headwhite.png" width="20px"
                                          height="20px"/>
                                     <span style="color: #FFFFFF;font-size: 15px">
-                                    <i>Login</i>
+                                    <i th:if="${user==null}">Login</i>
+                                    <i th:if="${user!=null}" th:text="${user.name}">Login</i>
                                 </span>
                                 </a>
                                 <div class="dropdown-menu pull-right"
@@ -301,7 +302,7 @@ Header start
                                     <li><a href="#hero-area">首页</a></li>
                                     <li><a href="#about-us">关于我们</a></li>
                                     <li><a href="#blog">牛奶箱</a></li>
-                                    <li><a href="#">充值</a></li>
+                                    <li><a href="#subscribe">充值</a></li>
                                     <li><a href="#footer">联系我们</a></li>
                                 </ul>
                             </div><!-- /.navbar-collapse -->
@@ -445,8 +446,23 @@ blog start
                                 <input type="text" class="form-control" id="exampleInputAmount"
                                        placeholder="输入您的邮箱以充值...">
                                 <div class="input-group-addon">
-                                    <a th:href="@{/shift}" class="btn btn-default" type="submit"> 点击充值</a>
-                                    <!--<button class="btn btn-default" type="submit">充值</button>-->
+                                    <a th:href="@{/shift}" class="btn btn-default"
+                                    style="
+                                    width: 212px;
+                                    height: 65px;
+                                    border: none;
+                                    border-radius: 0px;
+                                    background: #7EC3BB;
+                                    color: #fff;
+                                    font-weight: 600;
+                                    font-size: 16px;
+                                    letter-spacing: 2px;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    transition: .3s all;
+                                    text-align:center;
+                                    padding-top: 2.4rem" 
+                                    type="submit"> 点击充值</a>
                                 </div>
                             </div>
                         </div>
