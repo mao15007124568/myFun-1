@@ -1,12 +1,15 @@
 package edu.hubu.myfun.exception;
 
+/**
+ * Created by codedrinker on 2019/5/28.
+ */
 public class CustomizeException extends RuntimeException {
     private String message;
     private Integer code;
 
-    public CustomizeException(ICustomizeErrorCode customizeErrorCode){
-        this.message=customizeErrorCode.getMessage();
-        this.code=customizeErrorCode.getCode();
+    public CustomizeException(ICustomizeErrorCode errorCode) {
+        this.code = errorCode.getCode();
+        this.message = errorCode.getMessage();
     }
 
     @Override
@@ -14,7 +17,7 @@ public class CustomizeException extends RuntimeException {
         return message;
     }
 
-    public Integer getCode(){
+    public Integer getCode() {
         return code;
     }
 }
