@@ -3,9 +3,11 @@ package edu.hubu.myfun.service;
 import edu.hubu.myfun.mapper.UserMapper;
 import edu.hubu.myfun.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
+@Component
 public class UserService {
 
     @Autowired
@@ -16,7 +18,7 @@ public class UserService {
         if(user==null){
             return 0;
         }else {
-            user.setMoney(35);
+            user.setMoney(user.getMoney()+5);
             return usermapper.updateByPrimaryKey(user);
         }
     }

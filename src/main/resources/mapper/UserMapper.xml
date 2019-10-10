@@ -3,6 +3,7 @@
 <mapper namespace="edu.hubu.myfun.mapper.UserMapper">
   <resultMap id="BaseResultMap" type="edu.hubu.myfun.pojo.User">
     <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="ACCOUNT_ID" jdbcType="BIGINT" property="accountId" />
     <result column="NAME" jdbcType="VARCHAR" property="name" />
     <result column="AVATAR_URL" jdbcType="VARCHAR" property="avatarUrl" />
     <result column="GMT_CREATOR" jdbcType="BIGINT" property="gmtCreator" />
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, NAME, AVATAR_URL, GMT_CREATOR, GMT_MODIFY, MONEY
+    ID, ACCOUNT_ID, NAME, AVATAR_URL, GMT_CREATOR, GMT_MODIFY, MONEY
   </sql>
   <select id="selectByExample" parameterType="edu.hubu.myfun.pojo.UserExample" resultMap="BaseResultMap">
     select
@@ -101,18 +102,21 @@
     </if>
   </delete>
   <insert id="insert" parameterType="edu.hubu.myfun.pojo.User">
-    insert into USER (ID, NAME, AVATAR_URL, 
-      GMT_CREATOR, GMT_MODIFY, MONEY
-      )
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, 
-      #{gmtCreator,jdbcType=BIGINT}, #{gmtModify,jdbcType=BIGINT}, #{money,jdbcType=INTEGER}
-      )
+    insert into USER (ID, ACCOUNT_ID, NAME, 
+      AVATAR_URL, GMT_CREATOR, GMT_MODIFY, 
+      MONEY)
+    values (#{id,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
+      #{avatarUrl,jdbcType=VARCHAR}, #{gmtCreator,jdbcType=BIGINT}, #{gmtModify,jdbcType=BIGINT}, 
+      #{money,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="edu.hubu.myfun.pojo.User">
     insert into USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         ID,
+      </if>
+      <if test="accountId != null">
+        ACCOUNT_ID,
       </if>
       <if test="name != null">
         NAME,
@@ -133,6 +137,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=BIGINT},
+      </if>
+      <if test="accountId != null">
+        #{accountId,jdbcType=BIGINT},
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
@@ -163,6 +170,9 @@
       <if test="record.id != null">
         ID = #{record.id,jdbcType=BIGINT},
       </if>
+      <if test="record.accountId != null">
+        ACCOUNT_ID = #{record.accountId,jdbcType=BIGINT},
+      </if>
       <if test="record.name != null">
         NAME = #{record.name,jdbcType=VARCHAR},
       </if>
@@ -186,6 +196,7 @@
   <update id="updateByExample" parameterType="map">
     update USER
     set ID = #{record.id,jdbcType=BIGINT},
+      ACCOUNT_ID = #{record.accountId,jdbcType=BIGINT},
       NAME = #{record.name,jdbcType=VARCHAR},
       AVATAR_URL = #{record.avatarUrl,jdbcType=VARCHAR},
       GMT_CREATOR = #{record.gmtCreator,jdbcType=BIGINT},
@@ -198,6 +209,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="edu.hubu.myfun.pojo.User">
     update USER
     <set>
+      <if test="accountId != null">
+        ACCOUNT_ID = #{accountId,jdbcType=BIGINT},
+      </if>
       <if test="name != null">
         NAME = #{name,jdbcType=VARCHAR},
       </if>
@@ -218,7 +232,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="edu.hubu.myfun.pojo.User">
     update USER
-    set NAME = #{name,jdbcType=VARCHAR},
+    set ACCOUNT_ID = #{accountId,jdbcType=BIGINT},
+      NAME = #{name,jdbcType=VARCHAR},
       AVATAR_URL = #{avatarUrl,jdbcType=VARCHAR},
       GMT_CREATOR = #{gmtCreator,jdbcType=BIGINT},
       GMT_MODIFY = #{gmtModify,jdbcType=BIGINT},

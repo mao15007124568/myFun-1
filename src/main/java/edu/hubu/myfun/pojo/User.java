@@ -3,6 +3,8 @@ package edu.hubu.myfun.pojo;
 public class User {
     private Long id;
 
+    private Long accountId;
+
     private String name;
 
     private String avatarUrl;
@@ -19,6 +21,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
     }
 
     public String getName() {

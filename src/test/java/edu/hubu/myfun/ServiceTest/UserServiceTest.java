@@ -1,8 +1,6 @@
 package edu.hubu.myfun.ServiceTest;
 
-import edu.hubu.myfun.MyfunApplicationTests;
 import edu.hubu.myfun.mapper.UserMapper;
-import edu.hubu.myfun.pojo.User;
 import edu.hubu.myfun.service.UserService;
 import org.junit.Assert;
 import org.junit.Test;

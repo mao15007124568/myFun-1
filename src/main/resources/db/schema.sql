@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS user;
 create table user
 (
 	id bigint auto_increment,
+	account_id bigint,
 	name varchar(50),
 	avatar_url varchar(100),
 	gmt_creator bigint,

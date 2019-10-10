@@ -2,6 +2,9 @@ package edu.hubu.myfun.controller;
 
 import edu.hubu.myfun.dto.AccessTokenDTO;
 import edu.hubu.myfun.dto.GithubUser;
+import edu.hubu.myfun.mapper.UserMapper;
+import edu.hubu.myfun.pojo.User;
+import edu.hubu.myfun.pojo.UserExample;
 import edu.hubu.myfun.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,6 +31,9 @@ public class LoginController {
     @Autowired
     GithubProvider githubProvider;
 
+    @Autowired
+    UserMapper userMapper;
+
     @RequestMapping("callback")
     public String login(@RequestParam(name = "code") String code,
                         @RequestParam(name = "state") String state,
@@ -41,6 +47,11 @@ public class LoginController {
         accessTokenDTO.setRedirect_uri(redirectUrl);
         accessTokenDTO.setState(state);
         GithubUser githubUser = githubProvider.getGithubUser(githubProvider.getAccess(accessTokenDTO));
+        User user = userMapper.selectByPrimaryKey(githubUser.getId());
+
+
+
+        UserExample userExample = new UserExample();
         model.addAttribute("user", githubUser);
         session.setAttribute("user",githubUser);
         return "loginExample";

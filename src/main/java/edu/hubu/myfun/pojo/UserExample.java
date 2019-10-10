@@ -164,6 +164,66 @@ public class UserExample {
             return (Criteria) this;
         }
 
+        public Criteria andAccountIdIsNull() {
+            addCriterion("ACCOUNT_ID is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdIsNotNull() {
+            addCriterion("ACCOUNT_ID is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdEqualTo(Long value) {
+            addCriterion("ACCOUNT_ID =", value, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdNotEqualTo(Long value) {
+            addCriterion("ACCOUNT_ID <>", value, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdGreaterThan(Long value) {
+            addCriterion("ACCOUNT_ID >", value, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("ACCOUNT_ID >=", value, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdLessThan(Long value) {
+            addCriterion("ACCOUNT_ID <", value, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdLessThanOrEqualTo(Long value) {
+            addCriterion("ACCOUNT_ID <=", value, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdIn(List<Long> values) {
+            addCriterion("ACCOUNT_ID in", values, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdNotIn(List<Long> values) {
+            addCriterion("ACCOUNT_ID not in", values, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdBetween(Long value1, Long value2) {
+            addCriterion("ACCOUNT_ID between", value1, value2, "accountId");
+            return (Criteria) this;
+        }
+
+        public Criteria andAccountIdNotBetween(Long value1, Long value2) {
+            addCriterion("ACCOUNT_ID not between", value1, value2, "accountId");
+            return (Criteria) this;
+        }
+
         public Criteria andNameIsNull() {
             addCriterion("NAME is null");
             return (Criteria) this;
