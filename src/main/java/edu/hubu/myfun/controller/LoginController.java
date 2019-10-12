@@ -6,6 +6,7 @@ import edu.hubu.myfun.mapper.UserMapper;
 import edu.hubu.myfun.pojo.User;
 import edu.hubu.myfun.pojo.UserExample;
 import edu.hubu.myfun.provider.GithubProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpRequest;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.awt.peer.LightweightPeer;
 
 @Controller
+@Slf4j
 public class LoginController {
 
     @Value("${github.client.id}")
@@ -47,13 +50,29 @@ public class LoginController {
         accessTokenDTO.setRedirect_uri(redirectUrl);
         accessTokenDTO.setState(state);
         GithubUser githubUser = githubProvider.getGithubUser(githubProvider.getAccess(accessTokenDTO));
-        User user = userMapper.selectByPrimaryKey(githubUser.getId());
-
-
-
-        UserExample userExample = new UserExample();
-        model.addAttribute("user", githubUser);
-        session.setAttribute("user",githubUser);
-        return "loginExample";
+        if(githubUser != null){
+            User user = userMapper.selectByPrimaryKey(githubUser.getId());
+            if(user==null){
+                User newUser = new User();
+                newUser.setAccountId(user.getId());
+                newUser.setAvatarUrl(user.getAvatarUrl());
+                newUser.setGmtCreator(System.currentTimeMillis());
+                newUser.setGmtModify(System.currentTimeMillis());
+                newUser.setName(user.getName());
+                userMapper.insert(newUser);
+                session.setAttribute("user",newUser);
+                model.addAttribute("user",newUser);
+                return "redirect:/";
+            }else {
+                UserExample userExample = new UserExample();
+                model.addAttribute("user", githubUser);
+                session.setAttribute("user",githubUser);
+                return "redirect:/";
+            }
+        }else{
+            model.addAttribute("error","用户不存在,请重新登录");
+            log.error("error of login ,{}",new RuntimeException("无法从github得到用户信息"));
+            return "error";
+        }
     }
 }
