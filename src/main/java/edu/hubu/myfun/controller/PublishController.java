@@ -25,7 +25,7 @@ public class PublishController {
     private TroubleMapper troubleMapper;
 
     @RequestMapping("/publish")
-    public String envelope(@RequestParam String title,
+    public String envelope(@RequestParam("title") String title,
                            @RequestParam String content,
                            @RequestParam Long tag,
                            HttpSession session,
