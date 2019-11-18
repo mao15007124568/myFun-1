@@ -1,5 +1,6 @@
 package edu.hubu.myfun.controller;
 
+import com.alibaba.fastjson.JSON;
 import edu.hubu.myfun.dto.AccessTokenDTO;
 import edu.hubu.myfun.dto.GithubUser;
 import edu.hubu.myfun.mapper.UserMapper;
@@ -50,28 +51,27 @@ public class LoginController {
         accessTokenDTO.setRedirect_uri(redirectUrl);
         accessTokenDTO.setState(state);
         GithubUser githubUser = githubProvider.getGithubUser(githubProvider.getAccess(accessTokenDTO));
-        if(githubUser != null){
+        if (githubUser != null) {
             User user = userMapper.selectByPrimaryKey(githubUser.getId());
-            if(user==null){
+            if (user == null) {
                 User newUser = new User();
-                newUser.setAccountId(user.getId());
-                newUser.setAvatarUrl(user.getAvatarUrl());
+                newUser.setAvatarUrl(githubUser.getAvatarUrl());
                 newUser.setGmtCreator(System.currentTimeMillis());
                 newUser.setGmtModify(System.currentTimeMillis());
-                newUser.setName(user.getName());
+                newUser.setName(githubUser.getName());
                 userMapper.insert(newUser);
-                session.setAttribute("user",newUser);
-                model.addAttribute("user",newUser);
+                session.setAttribute("user", newUser);
+                model.addAttribute("user", newUser);
                 return "redirect:/";
-            }else {
-                UserExample userExample = new UserExample();
-                model.addAttribute("user", githubUser);
-                session.setAttribute("user",githubUser);
+            } else {
+                model.addAttribute("user", user);
+                System.out.println(JSON.toJSONString(user));
+                session.setAttribute("user", user);
                 return "redirect:/";
             }
-        }else{
-            model.addAttribute("error","用户不存在,请重新登录");
-            log.error("error of login ,{}",new RuntimeException("无法从github得到用户信息"));
+        } else {
+            model.addAttribute("error", "用户不存在,请重新登录");
+            log.error("error of login ,{}", new RuntimeException("无法从github得到用户信息"));
             return "error";
         }
     }

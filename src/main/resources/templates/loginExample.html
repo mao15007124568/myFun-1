@@ -212,33 +212,39 @@ header-img start
                                 <a href="#" class="dropdown-toggle"
                                    data-toggle="dropdown"
                                    style="height: 60px">
-                                    <img alt="" class="img-circle" th:src="@{${user==null} ? 'images/head.png':${user.avatarUrl}}" src="images/headwhite.png" width="20px"
+                                    <img alt="" class="img-circle"
+                                         th:src="@{session.user==null? 'images/head.png':sesion.user.avatarUrl}"
+                                         src="images/headwhite.png" width="20px"
                                          height="20px"/>
                                     <span style="color: #FFFFFF;font-size: 15px">
-                                    <i th:if="${user==null}">Login</i>
-                                    <i th:if="${user!=null}" th:text="${user.name}">Login</i>
+                                    <i th:if="${session.user==null}">Login</i>
+                                    <i th:if="${session.user!=null}" th:text="${session.user.name}">Login</i>
                                 </span>
                                 </a>
                                 <div class="dropdown-menu pull-right"
                                      style="background: #FFFFFF;width: 320px;overflow: hidden">
                                     <div style="margin-top: 16px;border-bottom: 1px solid #eeeeee">
                                         <div style="text-align: center">
-                                            <img class="img-circle" th:src="@{${user==null} ? 'images/head.png':${user.avatarUrl}}"
+                                            <img class="img-circle"
+                                                 th:src="@{${session.user==null} ? 'images/head.png':${session.user.avatarUrl}}"
                                                  src="images/head.png"
                                                  style="width: 20px;height: 20px;"/>
                                         </div>
-                                        <div th:if="${user}==null" style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
-                                            <span >请登录</span>
+                                        <div th:if="${session.user}==null"
+                                             style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
+                                            <span>请登录</span>
                                         </div>
-                                        <div th:if="${user}!=null" style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
-                                            <span th:text="${user.name}"></span>
+                                        <div th:if="${session.user}!=null"
+                                             style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
+                                            <span th:text="${session.user.name}"></span>
                                         </div>
                                     </div>
 
                                     <div class="row" style="margin-left: 15px;margin-right: 15px;margin-top: 10px">
-                                        <div id="login" class="col-md-4 text-center grid" th:if="${session.user == null}">
+                                        <div id="login" class="col-md-4 text-center grid"
+                                             th:if="${session.user == null}">
                                             <i class="fa fa-user" style="font-size: 25px;line-height: 45px;"></i>
-                                            <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px" >
+                                            <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
                                                 点击登录</p>
                                         </div>
                                         <div id="notice" class="col-md-4 text-center grid">
@@ -300,7 +306,7 @@ Header start
                                     <li><a href="#hero-area">首页</a></li>
                                     <li><a href="#about-us">关于我们</a></li>
                                     <li><a href="#blog">牛奶箱</a></li>
-                                    <li><a href="#subscribe">充值</a></li>
+                                    <li><a href="/profile/rechargePage">充值</a></li>
                                     <li><a href="#footer">联系我们</a></li>
                                 </ul>
                             </div><!-- /.navbar-collapse -->
@@ -445,7 +451,7 @@ blog start
                                        placeholder="输入您的邮箱以充值...">
                                 <div class="input-group-addon">
                                     <a th:href="@{/shift}" class="btn btn-default"
-                                    style="
+                                       style="
                                     width: 212px;
                                     height: 65px;
                                     border: none;
@@ -459,8 +465,8 @@ blog start
                                     text-transform: uppercase;
                                     transition: .3s all;
                                     text-align:center;
-                                    padding-top: 2.4rem" 
-                                    type="submit"> 点击充值</a>
+                                    padding-top: 2.4rem"
+                                       type="submit"> 点击充值</a>
                                 </div>
                             </div>
                         </div>

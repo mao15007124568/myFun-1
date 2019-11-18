@@ -12,13 +12,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/comment")
 public class ResponseController {
     @Autowired
     private CommentService commentService;
 
-    @RequestMapping("/comment")
-    public String comment (@RequestParam("content")String content,
-                           @RequestParam("id")Long id,
+    @RequestMapping("/page")
+    public String getPage(){
+        return "writeLetter";
+    }
+
+    @RequestMapping("/write")
+    public String comment (@RequestParam("title")String title,
+                            @RequestParam("content")String content,
+                           @RequestParam(value = "id",required = false)Long id,
                            HttpSession session,
                            Model model){
         User user = (User) session.getAttribute("user");
@@ -33,6 +40,6 @@ public class ResponseController {
         comment.setTroubleId(id);
         comment.setGmtCreate(System.currentTimeMillis());
         commentService.handleComment(comment, user);
-        return "";
+        return "successful";
     }
 }
