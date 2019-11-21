@@ -5,12 +5,20 @@
     <title>写信</title>
 </head>
 <body>
-        <form action="/comment/write" >
+        <form action="/letter/comment" >
            标题 <input type="text" name="title"/><br>
             ****写信中****<br>
             <textarea name="content" cols="80" rows="20" placeholder="请写出您想要写给ta的心里话哦">
             </textarea><br>
             <input value="回复" type="submit"/>
+        </form>
+
+        <form action="/letter/write" >
+            标题 <input type="text" name="title"/><br>
+            ****写信中****<br>
+            <textarea name="content" cols="80" rows="20" placeholder="请写出您想要写给ta的心里话哦">
+            </textarea><br>
+            <input value="投信" type="submit"/>
         </form>
 </body>
 </html>

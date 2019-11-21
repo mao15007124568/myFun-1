@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>忧愁列表</title>
+</head>
+<body>
+    <div>
+        <div th:each="trouble:${troubles}">
+            <h2 th:text="${trouble.title}"></h2>
+            <p th:text="${trouble.content}"></p>
+        </div>
+    </div>
+
+</body>
+</html>

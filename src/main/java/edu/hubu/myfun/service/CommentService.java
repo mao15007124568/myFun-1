@@ -11,7 +11,7 @@ public class CommentService {
     @Autowired
     CommentMapper commentMapper;
 
-    public void handleComment(Comment comment, User user){
-        commentMapper.insert(comment);
+    public int handleComment(Comment comment, User user){
+        return commentMapper.insert(comment);
     }
 }

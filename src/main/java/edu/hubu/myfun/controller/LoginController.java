@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.awt.peer.LightweightPeer;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -52,8 +53,11 @@ public class LoginController {
         accessTokenDTO.setState(state);
         GithubUser githubUser = githubProvider.getGithubUser(githubProvider.getAccess(accessTokenDTO));
         if (githubUser != null) {
-            User user = userMapper.selectByPrimaryKey(githubUser.getId());
-            if (user == null) {
+
+            UserExample userExample=new UserExample();
+            userExample.createCriteria().andAccountIdEqualTo(githubUser.getId());
+            List<User> users = userMapper.selectByExample(userExample);
+            if (users.size() == 0) {
                 User newUser = new User();
                 newUser.setAvatarUrl(githubUser.getAvatarUrl());
                 newUser.setGmtCreator(System.currentTimeMillis());
@@ -64,9 +68,8 @@ public class LoginController {
                 model.addAttribute("user", newUser);
                 return "redirect:/";
             } else {
-                model.addAttribute("user", user);
-                System.out.println(JSON.toJSONString(user));
-                session.setAttribute("user", user);
+                model.addAttribute("user", users.get(0));
+                session.setAttribute("user", users.get(0));
                 return "redirect:/";
             }
         } else {
