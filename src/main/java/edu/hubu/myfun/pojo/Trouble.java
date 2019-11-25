@@ -3,6 +3,8 @@ package edu.hubu.myfun.pojo;
 public class Trouble {
     private Long id;
 
+    private String content;
+
     private String title;
 
     private Long tagId;
@@ -13,7 +15,6 @@ public class Trouble {
 
     private Long gmtModify;
 
-    private String content;
 
     public Long getId() {
         return id;

@@ -7,8 +7,11 @@
 <body>
     <div>
         <div th:each="trouble:${troubles}">
+            <img th:src="@{${trouble.user.avatarUrl}}"  style="width: 50px;">
             <h2 th:text="${trouble.title}"></h2>
-            <p th:text="${trouble.content}"></p>
+            <hr>
+            <p th:text="${trouble.getContent()}"></p>
+            <hr>
         </div>
     </div>
 

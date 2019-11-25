@@ -12,20 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TranstformUtils {
+public class TransUtils {
 
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
     public  List<TroubleDTO> troubleSetUser(List<Trouble> troubles){
-
-
         List<TroubleDTO> troubleDTOList=new ArrayList<TroubleDTO>();
 
         for (int i=0;i<troubles.size();i++){
             User user = userMapper.selectByPrimaryKey(troubles.get(i).getCreator());
             TroubleDTO troubleDTO = new TroubleDTO();
-            BeanUtils.copyProperties(troubles.get(i).getCreator(),troubleDTO);
+            BeanUtils.copyProperties(troubles.get(i),troubleDTO);
             troubleDTO.setUser(user);
             troubleDTOList.add(troubleDTO);
         }
