@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
 public interface InformationMapper {
+
+
     long countByExample(InformationExample example);
 
     int deleteByExample(InformationExample example);
@@ -30,4 +32,6 @@ public interface InformationMapper {
     int updateByPrimaryKeySelective(Information record);
 
     int updateByPrimaryKey(Information record);
+
+    List<Information> selectAll();
 }

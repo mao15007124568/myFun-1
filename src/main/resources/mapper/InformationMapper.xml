@@ -71,6 +71,9 @@
   <sql id="Base_Column_List">
     ID, RECIPIENT, SENDER, STATUS, COMMENT_ID, GMT_CREATE, GMT_MODIFY
   </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from information
+  </select>
   <select id="selectByExample" parameterType="edu.hubu.myfun.pojo.InformationExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
