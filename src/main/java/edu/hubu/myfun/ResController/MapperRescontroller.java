@@ -26,7 +26,7 @@ public class MapperRescontroller {
 
     @RequestMapping(value = "/users")
     public Object getLUsers(){
-        return userMapper.selectAll();
+        return userMapper.selectByPrimaryKey(1L);
     }
 
     @RequestMapping(value = "/troubles")

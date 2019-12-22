@@ -1,5 +1,7 @@
 package edu.hubu.myfun.controller;
 
+import edu.hubu.myfun.pojo.User;
+import okhttp3.Request;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +13,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.servlet.http.HttpSession;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import static org.hamcrest.Matchers.containsString;
@@ -24,8 +28,6 @@ public class ResponseControllerTest {
     private int port;
 
     private URL base;
-
-    private URL baseone;
 
     @Autowired
     private TestRestTemplate template;
