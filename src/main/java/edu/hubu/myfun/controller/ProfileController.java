@@ -27,7 +27,7 @@ public class ProfileController {
     public String rechargePage(){
         return "recharge";
     }
-
+    
     @RequestMapping("/recharge")
     public String recharge(@RequestParam("amount") Integer amount,
                            HttpSession session,

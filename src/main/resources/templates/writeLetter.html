@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>写信</title>
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>回信</title>
+<script src="/js/modernizr.js" charset="utf-8" type="text/javascript"></script>
+<link rel="stylesheet" href="/css/style2.css" />
+<link href='http://fonts.useso.com/css?family=Satisfy' rel='stylesheet' type='text/css' />
+
 <body>
+
+<section class="container" id="contact" >
+    <form class="flip">
+        <div class="front">
+            <p>解忧杂货店</p>
+            <p>地址：湖北省武汉市武昌区徐家棚街道</p>
+            <p>75004 湖北大学</p>
+            <a id="flip2back" href="#">drop me a line</a>
+        </div>
+        <div id="content" class="back">
+            <div id="letter">
+                <div class="container">
+                    <div class="flip">
+                          <div class="front"></div>
+                          <div class="back">
+                            此处为信件内容
+                            <a id="close" href="#">关闭</a>
+                        </div>
+                    </div>
+                </div>
+                <textarea  class="required" id="message" name="message" placeholder="你要回的信件内容"></textarea>	
+                <input type="submit" class="submit" value="回信" />
+            </div>
+            <div id="top">
+                <a id="flip" href="#contact">翻转</a>
+            </div>
+            <div id="lid" class="container">
+                  <div class="flip">    
+                      <div class="front">
+                        <!-- <div>
+                            <label for="name">Your title :</label>
+                            <input type="text"  id="name" name="name">
+                        </div>
+                        <div>
+                            <label for="mail">Your email :</label>
+                            <input type="text" id="mail" name="mail" >
+                        </div> -->
+                        <a id="open" href="#content">打开</a>
+                    </div>
+                    <div class="back"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<!-- 以前的代码 -->
         <form action="/letter/comment" >
            标题 <input type="text" name="title"/><br>
             ****写信中****<br>
