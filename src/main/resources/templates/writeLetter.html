@@ -28,9 +28,13 @@
                         </div>
                     </div>
                 </div>
-                <textarea name="content" class="required" id="message" placeholder="请写出您想要写给ta的心里话哦">
-                </textarea>
-                <input value="投信" class="submit" type="submit"/>
+                <form action="/letter/comment" >
+                    标题 <input type="text" name="title"/><br>
+                     ****写信中****<br>
+                    <textarea name="content" class="required" id="message" placeholder="请写出您想要写给ta的心里话哦">
+                    </textarea>
+                    <input value="投信" class="submit" type="submit"/>
+                </form>
             </div>
             <div id="top">
                 <a id="flip" href="#contact">翻转</a>
