@@ -24,9 +24,9 @@ public class SessionInterceptor implements HandlerInterceptor {
         if(user==null){
             throw  new CustomizeException(CustomizeErrorCode.NO_LOGIN);
         }
-        int notificationCount = notificationService.getNotificationCount(user);
-System.out.println(notificationCount);
-        request.getSession().setAttribute("notificationCount", notificationCount);
+//        int notificationCount = notificationService.getNotificationCount(user);
+//System.out.println(notificationCount);
+//        request.getSession().setAttribute("notificationCount", notificationCount);
         return true;
     }
 }

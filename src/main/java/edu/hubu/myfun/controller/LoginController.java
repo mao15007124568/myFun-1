@@ -53,7 +53,6 @@ public class LoginController {
         accessTokenDTO.setState(state);
         GithubUser githubUser = githubProvider.getGithubUser(githubProvider.getAccess(accessTokenDTO));
         if (githubUser != null) {
-
             UserExample userExample=new UserExample();
             userExample.createCriteria().andAccountIdEqualTo(githubUser.getId());
             List<User> users = userMapper.selectByExample(userExample);
@@ -63,6 +62,7 @@ public class LoginController {
                 newUser.setGmtCreator(System.currentTimeMillis());
                 newUser.setGmtModify(System.currentTimeMillis());
                 newUser.setName(githubUser.getName());
+                newUser.setAccountId(githubUser.getId());
                 userMapper.insert(newUser);
                 session.setAttribute("user", newUser);
                 model.addAttribute("user", newUser);

@@ -19,6 +19,7 @@ public class SessioncConfiguration implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         List <String> pathPatterns = new ArrayList<String>();
+        pathPatterns.add("/");
         pathPatterns.add("/css/**");
         pathPatterns.add("/images/**");
         pathPatterns.add("/js/**");
@@ -26,7 +27,6 @@ public class SessioncConfiguration implements WebMvcConfigurer {
         pathPatterns.add("/fonts");
         pathPatterns.add("/callback");
         pathPatterns.add("/index");
-        pathPatterns.add("/");
         registry.addInterceptor(getSessionInterceptor())
                 .excludePathPatterns(pathPatterns)
                 .addPathPatterns("/**");
