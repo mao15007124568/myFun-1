@@ -73,9 +73,10 @@ public class LoginController {
                 return "redirect:/";
             }
         } else {
-            model.addAttribute("error", "用户不存在,请重新登录");
-            log.error("error of login ,{}", new RuntimeException("无法从github得到用户信息"));
-            return "error";
+//            model.addAttribute("error", "用户不存在,请重新登录");
+//            log.error("error of login ,{}", new RuntimeException("无法从github得到用户信息"));
+//            return "error";
+            return "redirect:/";
         }
     }
 }

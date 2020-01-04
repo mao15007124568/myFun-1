@@ -78,6 +78,9 @@
   <sql id="Blob_Column_List">
     CONTENT
   </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from comment
+  </select>
   <select id="selectByExampleWithBLOBs" parameterType="edu.hubu.myfun.pojo.CommentExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
