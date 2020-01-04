@@ -249,7 +249,7 @@ header-img start
                                         </div>
                                         <div id="notice" class="col-md-4 text-center grid">
                                             <i class="fa fa-comments" style="font-size: 25px;line-height: 45px;"></i>
-                                            <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
+                                            <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px" th:text="${session.notificationCount==null? '未读消息':session.notificationCount}">
                                                 未读消息</p>
                                         </div>
                                         <div id="money" class="col-md-4 text-center grid">
